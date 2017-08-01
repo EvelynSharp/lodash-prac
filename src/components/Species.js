@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import _ from 'lodash';
 
 class Species extends React.Component {
   defaultData = { species: {} }
@@ -17,10 +18,17 @@ class Species extends React.Component {
   }
 
   render() {
+    let { species } = this.state;
     return(
       <div>
         Species
         <button onClick={this.getSpecies}>Get Species</button>
+        <div>
+          { !_.isEmpty(species) &&
+            <div>Chunck: <span>{_.chunk(species.films, 2)[0].join('***')}</span></div>
+            
+          }
+        </div>
       </div>
     )
   }
