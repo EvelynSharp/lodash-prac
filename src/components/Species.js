@@ -63,7 +63,10 @@ class Species extends React.Component {
       count++;
       return 1;
     })
-    console.log(arr1)
+    let arr2 = _.times(6, _.uniqueId.bind(null, 'number_'))
+  //  console.log(arr1)
+  console.log(arr2)
+  console.log(_.uniqueId('number_'))
     return count;
   }
 
