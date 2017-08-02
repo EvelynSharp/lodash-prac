@@ -57,6 +57,16 @@ class Species extends React.Component {
     return asianIndex+' '+blackIndex
   }
 
+  useTimes = () =>{
+    let count = 0;
+    let arr1 = _.times(4, () => {
+      count++;
+      return 1;
+    })
+    console.log(arr1)
+    return count;
+  }
+
   render() {
     let { films,
           average_height,
@@ -81,6 +91,7 @@ class Species extends React.Component {
               <div>Drop: {this.useDrop()} </div>
               <div>Fill: {_.fill(skin_colors.split(', '),['*'], 1, 3).join(' ')} </div>
               <div>Find: {this.useFind()} </div>
+              <div>LoopTime: {this.useTimes()} </div>
             </div>
           }
         </div>
