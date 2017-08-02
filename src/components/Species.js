@@ -67,6 +67,12 @@ class Species extends React.Component {
     return count;
   }
 
+  lodashMap = () => {
+    let arr = [ this.state.species ]
+    let result = _.map(arr, 'people[0]')
+    return result;
+  }
+
   render() {
     let { films,
           average_height,
@@ -92,6 +98,7 @@ class Species extends React.Component {
               <div>Fill: {_.fill(skin_colors.split(', '),['*'], 1, 3).join(' ')} </div>
               <div>Find: {this.useFind()} </div>
               <div>LoopTime: {this.useTimes()} </div>
+              <div>useMap: {this.lodashMap()} </div>
             </div>
           }
         </div>
